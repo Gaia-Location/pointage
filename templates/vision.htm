@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">B2MTP - Pointage</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">Formulaire</a></li>
+                    <li><a href="/login">Connexion</a></li>
+                    <li><a href="/register">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <main>
+        <center>
+            
+            <div class="container">
+                {% for item in today %}
+                <div class="row">
+                    <div class="col s12 m6">
+                      <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                          <span class="card-title">Heure d'arrivée</span>
+                          <li>{{item.firstname}}</li>
+                          <li>{{item.lastname}}</li>
+                          <li>{{item.hours}}</li>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+            </div>
+        </center>
+    </main>
+
+</body>
+
+</html>

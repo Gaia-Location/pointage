@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">B2MTP - Pointage</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/">Formulaire</a></li>
+                    <li><a href="/login">Connexion</a></li>
+                    <li><a href="/register">Inscription</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <main>
+        <center>
+            <div class="container">
+                {% if error %}
+                <div class="ui message negative">
+                    <i class="close icon"></i>
+                    <div class="header">
+                      Erreur
+                    </div>
+                    <p>Mauvais code</p>
+                  </div>
+                  <br>
+                  <br>
+                  {% endif %}
+                  {% if success %}
+                  <div class="ui message positive">
+                      <i class="close icon"></i>
+                      <div class="header">
+                        Bravo
+                      </div>
+                      <p>Validé !</p>
+                    </div>
+                    <br>
+                    <br>
+                    {% endif %}
+                <div class="row">
+                    <form class="col s12" action="/validate" method="POST">                        
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="code" name="code" type="number" class="validate">
+                                <label for="code">Code de vérification</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button type="submit" class="waves-effect waves-light btn-large">Valider</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </center>
+    </main>
+
+</body>
+
+</html>
